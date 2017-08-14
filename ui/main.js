@@ -13,7 +13,7 @@ button.onclick=function(){
             {
                 var bt1 = req.responseText;
                 var span =document.getElementById('sp1');
-                span.innerHTML=counter.toString();
+                span.innerHTML=bt1.toString();
             }
         }
     };   
