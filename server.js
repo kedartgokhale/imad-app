@@ -52,7 +52,7 @@ var art1={
 </html>
      
   `;
-    return htmlTemplate;  
+    //return htmlTemplate;  
   }
 
 
