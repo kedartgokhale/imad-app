@@ -9,13 +9,14 @@ button.onclick=function(){
         if(req.readyState===XMLHttpRequest.DONE)
         {
             //take some action
-            if(req.status===200){
-                var couter = req.responseText;
+            if(req.status===200)
+            {
+                var bt1 = req.responseText;
                 var span =document.getElementById('sp1');
                 span.innerHTML=counter.toString();
             }
         }
-        };   
+    };   
             //make the request
     req.open('GET','http://gkedartushar.imad.hasura-app.io/counter',true);
     req.send(null);
