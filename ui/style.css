@@ -19,10 +19,10 @@ body {
 .img-medium {
     height: 200px;
 }
-  p{
+.a2{
     color:brown;
 }
-div{
+.a1{
     max-width:450px;
     border-style:dashed;
 }
