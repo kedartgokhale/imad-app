@@ -9,7 +9,7 @@ button.onclick=function(){
         if(req.readyState===XMLHttpRequest.DONE)
         {
             //take some action
-            if(req=status===200){
+            if(req.status===200){
                 var couter = req.responseText;
                 var span =document.getElementById('sp1');
                 span.innerHTML=counter.toString();
