@@ -23,11 +23,11 @@ app.get('/artical1', function (req ,res){
 });
 
 app.get('/artical2', function (req ,res){
-    res.send("this is article 2");
+   res.sendFile(path.join(__dirname, 'ui', 'artical12.html'));
     
 });
 app.get('/artical3', function (req ,res){
-    res.send("this is article 3");
+   res.sendFile(path.join(__dirname, 'ui', 'artical3.html'));
     
 });
 
@@ -38,3 +38,4 @@ var port = 80;
 app.listen(port, function () {
   console.log(`IMAD course app listening on port ${port}!`);
 });
+res.sendFile(path.join(__dirname, 'ui', 'artical1.html'));
