@@ -5,8 +5,8 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-
-var art1={
+var articles={
+    artical1:{
     heading:'Artical 1!!',
     content:
     `<p class="a2">
@@ -26,7 +26,51 @@ var art1={
         </div>
     
     `
-  };
+  },
+     artical2:{
+      heading:'Artical 2!!',
+    content:
+    `<p class="a2">
+            this is the course in which students willl learn basic web development.this is the course in which students willl learn basic web development.this is the course in which students willl learn basic web development.this is the course in which students willl learn basic web development.this is the course in which students willl learn basic web development.
+        </p>
+      
+         <p>
+            this is the course in which students willl learn basic web development.this is the course in which students willl learn basic web development.this is the course in which students willl learn basic web development.this is the course in which students willl learn basic web development.this is the course in which students willl learn basic web development.
+        </p>
+        <div class="a1">
+            <ol>
+                <li>Web</li>
+                <li>Asiignment</li>
+                <li>Course</li>
+                
+            </ol>
+        </div>
+    
+    `
+      
+  },
+     artical3:{
+      heading:'Artical 3!!',
+    content:
+    `<p class="a2">
+            this is the course in which students willl learn basic web development.this is the course in which students willl learn basic web development.this is the course in which students willl learn basic web development.this is the course in which students willl learn basic web development.this is the course in which students willl learn basic web development.
+        </p>
+      
+         <p>
+            this is the course in which students willl learn basic web development.this is the course in which students willl learn basic web development.this is the course in which students willl learn basic web development.this is the course in which students willl learn basic web development.this is the course in which students willl learn basic web development.
+        </p>
+        <div class="a1">
+            <ol>
+                <li>Web</li>
+                <li>Asiignment</li>
+                <li>Course</li>
+                
+            </ol>
+        </div>
+    
+    `
+  }
+};
   function createTemp(data)
   {
       var heading=data.heading;
@@ -65,11 +109,12 @@ app.get('/ui/style.css', function (req, res) {
 });
 
 app.get('/ui/madi.png', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
+      res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
-app.get('/artical1', function (req ,res){
-    res.send(createTemp(art1));
+app.get('/:artName', function (req ,res){
+    var artName =req.params.artName;
+    res.send(createTemp(articles[artName]));
 });
 
 app.get('/artical2', function (req ,res){
