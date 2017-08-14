@@ -36,4 +36,3 @@ var port = 80;
 app.listen(port, function () {
   console.log(`IMAD course app listening on port ${port}!`);
 });
-res.sendFile(path.join(__dirname, 'ui', 'artical1.html'));
