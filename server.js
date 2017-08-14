@@ -30,7 +30,7 @@ var art1={
   function createTemp(data)
   {
       var heading=data.heading;
-      var content=dat.content;
+      var content=data.content;
   var htmlTemplate=`
            <!doctype html>
 <html>
