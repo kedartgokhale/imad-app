@@ -5,6 +5,57 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+
+var art1={
+    heading:'Artical 1!!',
+    content:
+    `<p class="a2">
+            this is the course in which students willl learn basic web development.this is the course in which students willl learn basic web development.this is the course in which students willl learn basic web development.this is the course in which students willl learn basic web development.this is the course in which students willl learn basic web development.
+        </p>
+      
+         <p>
+            this is the course in which students willl learn basic web development.this is the course in which students willl learn basic web development.this is the course in which students willl learn basic web development.this is the course in which students willl learn basic web development.this is the course in which students willl learn basic web development.
+        </p>
+        <div class="a1">
+            <ol>
+                <li>Web</li>
+                <li>Asiignment</li>
+                <li>Course</li>
+                
+            </ol>
+        </div>
+    
+    `
+  };
+  function createTemp(data)
+  {
+      var heading=data.heading;
+      var content=dat.content;
+  var htmlTemplate=`
+           <!doctype html>
+<html>
+    <link href="/ui/style.css" rel="stylesheet" />
+    <body>
+        <a href="/">Home</a>
+        <hr/>
+        <h1>
+            Imad Course
+        </h1>
+        <h2>
+            ${heading}
+        </h2>
+       
+    </body>
+    
+    ${content}
+   
+</html>
+     
+  `;
+    return htmlTemplate;  
+  }
+
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
@@ -18,7 +69,7 @@ app.get('/ui/madi.png', function (req, res) {
 });
 
 app.get('/artical1', function (req ,res){
-    res.sendFile(path.join(__dirname, 'ui', 'artical1.html'));
+    res.send(createTemp(art1));
 });
 
 app.get('/artical2', function (req ,res){
